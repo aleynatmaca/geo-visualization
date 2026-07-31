@@ -1,0 +1,30 @@
+.login-container{
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+.group {
+    align-items: center;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+button{ 
+   padding: 10px;
+   border-radius: 8px;
+   background-color: aliceblue;
+   
+}
+button:hover {
+    background-color: rgb(255, 149, 0);
+}
+input {
+    border-radius: 8px;
+}
+label {
+    font-size: 20px;
+}
