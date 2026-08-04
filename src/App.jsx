@@ -1,4 +1,4 @@
-//import HomePage from "./pages/HomePage";
+/*import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 function App() {
   return(
@@ -7,4 +7,38 @@ function App() {
     
   );
 }
+export default App;*/
+import { useState } from "react";
+import LoginPage from "./pages/LoginPage";
+import HomePage from "./pages/HomePage";
+import SignUpPage from "./pages/SignUpPage";
+
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showSignUp, setShowSignUp] = useState(false);
+  const [userId, setUserId] = useState(null);
+
+  if (isLoggedIn) {
+    return <HomePage />;
+  }
+
+  if (showSignUp) {
+    return (
+      <SignUpPage
+        onRegisterSuccess={() => setShowSignUp(false)}
+        onBackToLogin={() => setShowSignUp(false)}
+      />
+    );
+  }
+
+  return (
+    <LoginPage
+    onLoginSuccess={(userId) => {
+        setUserId(userId);
+        setIsLoggedIn(true);
+    }}
+/>
+  );
+}
+
 export default App;

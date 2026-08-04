@@ -1,17 +1,39 @@
 import "./LoginPage.css";
 import { useState } from "react";
-function LoginPage() {
+function LoginPage({ onLoginSuccess, onGoToSignUp }) {
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
-  function handleLogin() {
+  /*function handleLogin() {
   const loginRequest = {
    email,
    password
 };
  console.log(loginRequest);
+}*/
+async function handleLogin() {
+  const loginRequest = {
+    email,
+    password,
+  };
+
+  const response = await fetch("http://localhost:8080/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(loginRequest),
+  });
+
+  const loginSuccess = await response.json();
+
+if (loginSuccess) {
+  onLoginSuccess();
+} else {
+  alert("Incorrect email or password.");
+}
 }
    return( <div className="login-container">
-    <h1> LOG IN </h1><div className="group"> 
+    <h1> Login </h1><div className="group"> 
     <label> Email </label>
     <input type="email"
     placeholder="Enter your email"
@@ -23,7 +45,10 @@ function LoginPage() {
     onChange={(e) => setPassword(e.target.value)}
     /> </div>
     <div className="button-group">
-        <button onClick={handleLogin}> Log In </button> </div>
+        <button onClick={handleLogin}> Log In </button> 
+        <button onClick={onGoToSignUp}>
+  Sign Up
+</button></div>
         </div>
   );
 }
