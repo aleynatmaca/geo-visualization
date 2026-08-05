@@ -1,7 +1,7 @@
 import MapView from "../components/MapView";
-function HomePage(){
+function HomePage({userId}){
     return (
-        <MapView/>
+        <MapView userId={userId}/>
     );
 }
 export default HomePage;

@@ -1,6 +1,6 @@
 import "./LoginPage.css";
 import { useState } from "react";
-function LoginPage({ onLoginSuccess, onGoToSignUp }) {
+function LoginPage({ onLoginSuccess,SignUp }) {
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
   /*function handleLogin() {
@@ -23,14 +23,21 @@ async function handleLogin() {
     },
     body: JSON.stringify(loginRequest),
   });
+const loginSuccess = await response.json();
 
-  const loginSuccess = await response.json();
+if (loginSuccess.success) {
+  onLoginSuccess(loginSuccess.userId);
+} else {
+  alert("Incorrect email or password.");
+}
+  
+  /*const loginSuccess = await response.json();
 
 if (loginSuccess) {
   onLoginSuccess();
 } else {
   alert("Incorrect email or password.");
-}
+}*/
 }
    return( <div className="login-container">
     <h1> Login </h1><div className="group"> 
@@ -46,7 +53,7 @@ if (loginSuccess) {
     /> </div>
     <div className="button-group">
         <button onClick={handleLogin}> Log In </button> 
-        <button onClick={onGoToSignUp}>
+        <button onClick={SignUp}>
   Sign Up
 </button></div>
         </div>

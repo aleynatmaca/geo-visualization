@@ -19,7 +19,7 @@ function App() {
   const [userId, setUserId] = useState(null);
 
   if (isLoggedIn) {
-    return <HomePage />;
+    return <HomePage userId={userId} />;
   }
 
   if (showSignUp) {
@@ -37,6 +37,7 @@ function App() {
         setUserId(userId);
         setIsLoggedIn(true);
     }}
+    SignUp={() => setShowSignUp(true)}
 />
   );
 }
