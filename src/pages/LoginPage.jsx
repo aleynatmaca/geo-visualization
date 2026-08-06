@@ -28,7 +28,7 @@ const loginSuccess = await response.json();
 if (loginSuccess.success) {
   onLoginSuccess(loginSuccess.userId);
 } else {
-  alert("Incorrect email or password.");
+  alert("Geçersiz e-posta veya şifre");
 }
   
   /*const loginSuccess = await response.json();
@@ -40,21 +40,21 @@ if (loginSuccess) {
 }*/
 }
    return( <div className="login-container">
-    <h1> Login </h1><div className="group"> 
-    <label> Email </label>
+    <h1> Giriş Yap </h1><div className="group"> 
+    <label> E-Posta </label>
     <input type="email"
-    placeholder="Enter your email"
+    placeholder="E-posta adresinizi giriniz"
     onChange = { (e)=> setEmail(e.target.value)}
     />  </div>
-   <div className="group"> <label> Password </label>
+   <div className="group"> <label> Şifre </label>
     <input type="password"
-    placeholder="Enter your password"
+    placeholder="Şifrenizi giriniz"
     onChange={(e) => setPassword(e.target.value)}
     /> </div>
     <div className="button-group">
-        <button onClick={handleLogin}> Log In </button> 
+        <button onClick={handleLogin}> Giriş Yap </button> 
         <button onClick={SignUp}>
-  Sign Up
+  Kayıt Ol
 </button></div>
         </div>
   );

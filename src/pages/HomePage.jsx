@@ -1,7 +1,14 @@
 import MapView from "../components/MapView";
-function HomePage({userId}){
+function HomePage({ userId, onLogout }) {
     return (
-        <MapView userId={userId}/>
-    );
+        
+    <div>
+      <button onClick={onLogout}>
+        Çıkış Yap
+      </button>
+
+      <MapView userId={userId} />
+    </div>
+  );
 }
 export default HomePage;

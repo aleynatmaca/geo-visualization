@@ -18,9 +18,17 @@ function App() {
   const [showSignUp, setShowSignUp] = useState(false);
   const [userId, setUserId] = useState(null);
 
-  if (isLoggedIn) {
-    return <HomePage userId={userId} />;
-  }
+ if (isLoggedIn) {
+  return (
+    <HomePage
+      userId={userId}
+      onLogout={() => {
+        setUserId(null);
+        setIsLoggedIn(false);
+      }}
+    />
+  );
+}
 
   if (showSignUp) {
     return (

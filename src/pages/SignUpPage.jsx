@@ -31,29 +31,29 @@ function SignUpPage({ onRegisterSuccess, onBackToLogin }) {
 
   return (
     <div className="login-container">
-      <h1>Sign Up</h1>
+      <h1>Kayıt Ol</h1>
 
       <div className="group">
-        <label>Email</label>
+        <label>E-posta</label>
         <input
           type="email"
-          placeholder="Enter your email"
+          placeholder="E-posta adresinizi giriniz"
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
 
       <div className="group">
-        <label>Password</label>
+        <label>Şifre</label>
         <input
           type="password"
-          placeholder="Enter your password"
+          placeholder="Şifrenizi giriniz"
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
 
       <div className="button-group">
-        <button onClick={handleRegister}>Register</button>
-        <button onClick={onBackToLogin}>Back to Login</button>
+        <button onClick={handleRegister}>Kayıt</button>
+        <button onClick={onBackToLogin}>Giriş ekranına dön</button>
       </div>
     </div>
   );
