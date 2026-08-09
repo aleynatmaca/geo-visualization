@@ -22,16 +22,16 @@ function SignUpPage({ onRegisterSuccess, onBackToLogin }) {
     const registerSuccess = await response.json();
 
     if (registerSuccess) {
-      alert("Login success.");
+      alert("Kayıt başarılı");
       onRegisterSuccess();
     } else {
-      alert("email kayıtlı.");
+      alert("Kayıtlı e-posta.");
     }
   }
 
   return (
     <div className="login-container">
-      <h1>Kayıt Ol</h1>
+      <h2>Kayıt Ol</h2>
 
       <div className="group">
         <label>E-posta</label>

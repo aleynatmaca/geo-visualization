@@ -1,5 +1,6 @@
 import "./LoginPage.css";
 import { useState } from "react";
+import worldMap from "../assets/world-map.png";
 function LoginPage({ onLoginSuccess,SignUp }) {
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
@@ -39,8 +40,8 @@ if (loginSuccess) {
   alert("Incorrect email or password.");
 }*/
 }
-   return( <div className="login-container">
-    <h1> Giriş Yap </h1><div className="group"> 
+  return( <div className="login-container">
+    <h2> Giriş Yap </h2><div className="group"> 
     <label> E-Posta </label>
     <input type="email"
     placeholder="E-posta adresinizi giriniz"
