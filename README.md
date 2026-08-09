@@ -26,6 +26,7 @@ Interactive map-based frontend application developed with React and React-Leafle
 
 ## Project Structure
 
+```text
 src/
 ├── assets/
 ├── components/
@@ -37,6 +38,7 @@ src/
 │   └── SignUpPage.jsx
 ├── App.jsx
 └── main.jsx
+```
 
 ## Backend Integration
 
